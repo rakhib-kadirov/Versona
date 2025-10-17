@@ -11,21 +11,18 @@ export function Main_Block_1() {
     useEffect(() => {
         const runCycle = () => {
             // 1. запускаем анимацию волн
-            // setRecognized(false);
-            // controls.start("wave");
-            interval = setTimeout(() => {
-                setRecognized(false);
-                controls.start("wave");
-            }, 16000);
-
+            setRecognized(false);
+            controls.start("wave");
+            
             // 2. через 3 секунды показываем галочку
             toCheck = setTimeout(() => {
                 setRecognized(true);
                 controls.start("check");
             }, 16000);
-
+            
             // 3. через 4 секунды начинаем заново
             toRestart = setTimeout(() => {
+                setRecognized(false);
                 controls.start("wave");
                 runCycle();
             }, 5000);
@@ -33,7 +30,6 @@ export function Main_Block_1() {
         runCycle()
 
         return () => {
-            clearInterval(interval);
             clearTimeout(toCheck);
             clearTimeout(toRestart);
         };
