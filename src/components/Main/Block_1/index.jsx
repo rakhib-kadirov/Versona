@@ -25,7 +25,7 @@ export function Main_Block_1() {
                 setRecognized(false);
                 controls.start("wave");
                 runCycle();
-            }, 20000);
+            }, 16000);
         };
         runCycle()
 
