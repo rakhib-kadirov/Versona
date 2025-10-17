@@ -6,25 +6,23 @@ import { scrollToElement } from '../scrollToElement/scrollToElement';
 export function Main_Block_1() {
     const controls = useAnimation();
     const [recognized, setRecognized] = useState(false);
-    let interval, toCheck, toRestart;
+    let toCheck, toRestart;
 
     useEffect(() => {
         const runCycle = () => {
             // 1. запускаем анимацию волн
-            // setRecognized(false);
-            // controls.start("wave");
-            interval = setInterval(() => {
-                controls.start("wave");
-            }, 16000);
-
+            setRecognized(false);
+            controls.start("wave");
+            
             // 2. через 3 секунды показываем галочку
             toCheck = setTimeout(() => {
                 setRecognized(true);
                 controls.start("check");
             }, 16000);
-
+            
             // 3. через 4 секунды начинаем заново
             toRestart = setTimeout(() => {
+                setRecognized(false);
                 controls.start("wave");
                 runCycle();
             }, 20000);
@@ -32,7 +30,6 @@ export function Main_Block_1() {
         runCycle()
 
         return () => {
-            clearInterval(interval);
             clearTimeout(toCheck);
             clearTimeout(toRestart);
         };
