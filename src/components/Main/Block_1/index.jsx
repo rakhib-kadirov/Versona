@@ -13,7 +13,8 @@ export function Main_Block_1() {
             // 1. запускаем анимацию волн
             // setRecognized(false);
             // controls.start("wave");
-            interval = setInterval(() => {
+            interval = setTimeout(() => {
+                setRecognized(false);
                 controls.start("wave");
             }, 16000);
 
