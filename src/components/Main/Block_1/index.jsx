@@ -21,7 +21,7 @@ export function Main_Block_1() {
             toCheck = setTimeout(() => {
                 setRecognized(true);
                 controls.start("check");
-            }, 0);
+            }, 16000);
 
             // 3. через 4 секунды начинаем заново
             toRestart = setTimeout(() => {
