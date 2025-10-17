@@ -6,6 +6,7 @@ import { scrollToElement } from '../scrollToElement/scrollToElement';
 export function Main_Block_1() {
     const controls = useAnimation();
     const [recognized, setRecognized] = useState(false);
+    let toCheck, toRestart;
 
     useEffect(() => {
         const runCycle = () => {
@@ -14,23 +15,23 @@ export function Main_Block_1() {
             controls.start("wave");
 
             // 2. через 3 секунды показываем галочку
-            const toCheck = setTimeout(() => {
+            toCheck = setTimeout(() => {
                 setRecognized(true);
                 controls.start("check");
             }, 16000);
 
             // 3. через 4 секунды начинаем заново
-            const toRestart = setTimeout(() => {
+            toRestart = setTimeout(() => {
                 controls.start("wave");
                 runCycle();
             }, 20000);
-
-            return () => {
-                clearTimeout(toCheck);
-                clearTimeout(toRestart);
-            };
         };
         runCycle()
+
+        return () => {
+            clearTimeout(toCheck);
+            clearTimeout(toRestart);
+        };
         // const cleanup = runCycle();
         // return cleanup;
     }, [controls]);
