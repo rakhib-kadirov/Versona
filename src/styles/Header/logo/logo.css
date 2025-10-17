@@ -1,0 +1,86 @@
+.logo {
+    display: inline-flex;
+    align-items: flex;
+    gap: 3px;
+    height: 4vw;
+}
+.logo-center {
+    display: inline-flex;
+    align-items: flex;
+    gap: 3px;
+    height: 4vw;
+    margin: 0 3px;
+}
+
+.reverse {
+    transform: scaleX(-1);
+}
+
+/* Voice wave bars */
+.logo.voice-wave .bar {
+    display: inline-block;
+    width: 3px;
+    height: 60%; /* base height relative to container */
+    background: linear-gradient(180deg, #5552FF, #D251FF);
+    border-radius: 3px;
+    transform-origin: center;
+    transform: scaleY(0.35);
+    animation: voice-wave 1s infinite ease-in-out;
+}
+.logo-center.center-bar .bar {
+    display: inline-block;
+    width: 3px;
+    height: 60%; /* taller center bar */
+    background: linear-gradient(180deg, #5552FF, #D251FF);
+    border-radius: 3px;
+    transform-origin: center;
+    transform: scaleY(0.35);
+    animation: center-bar 1s infinite ease-in-out;
+}
+
+.logo.voice-wave .bar:nth-child(1) { animation-delay: 0.06s; }
+.logo.voice-wave .bar:nth-child(2) { animation-delay: 0.12s; }
+.logo.voice-wave .bar:nth-child(3) { animation-delay: 0.24s; }
+.logo-center.center-bar .bar:nth-child(1) { animation-delay: 0.36s; }
+
+/* When not listening, slow and subtle */
+.logo:not(.listening) .bar {
+    animation-duration: 1.4s;
+    opacity: 0.9;
+}
+.logo-center:not(.listening) .bar {
+    animation-duration: 1.4s;
+    opacity: 0.9;
+}
+
+/* Listening state: faster and more dynamic */
+.logo.listening .bar {
+    animation-duration: 0.9s;
+}
+.logo-center.listening .bar {
+    animation-duration: 0.9s;
+}
+
+@keyframes voice-wave {
+    0%   { transform: scaleY(0.35); }
+    20%  { transform: scaleY(0.8); }
+    40%  { transform: scaleY(0.6); }
+    60%  { transform: scaleY(0.35); }
+    80%  { transform: scaleY(0.8); }
+    100% { transform: scaleY(0.35); }
+}
+
+@keyframes center-bar {
+    0%   { transform: scaleY(0.9); }
+    20%  { transform: scaleY(0.85); }
+    40%  { transform: scaleY(0.6); }
+    60%  { transform: scaleY(0.6); } 
+    80%  { transform: scaleY(0.85); }
+    100% { transform: scaleY(0.9); }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .logo .bar { animation: none; transform: scaleY(1); }
+    .logo-center .bar { animation: none; transform: scaleY(1); }
+}
