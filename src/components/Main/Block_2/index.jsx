@@ -11,7 +11,19 @@ export function Main_Block_2() {
         const updateLines = () => {
             const container = containerRef.current;
             if (!container) return;
+            
+            // На мобильных устройствах не показываем линии
+            const isMobile = window.innerWidth <= 767;
+            if (isMobile) {
+                setLines([]);
+                return;
+            }
+            
             const containerRect = container.getBoundingClientRect();
+
+            // Определяем адаптивные отступы в зависимости от размера экрана
+            const isTablet = window.innerWidth <= 1023;
+            const offset = isTablet ? 30 : 50;
 
             // пары индексов кружков, которые нужно соединить
             const pairs = [
@@ -28,15 +40,20 @@ export function Main_Block_2() {
                 const rectA = elA.getBoundingClientRect();
                 const rectB = elB.getBoundingClientRect();
 
-                // const x1 = rectA.left + rectA.width - containerRect.left;
-                // const y1 = rectA.top + rectA.height / 2 - containerRect.top;
-                // const x2 = rectB.left + rectB.width - containerRect.left;
-                // const y2 = rectB.top + rectB.height / 2 - containerRect.top;
-
-                const x1 = (sideA === "right" ? rectA.left + rectA.width + 50 : rectA.left - 50) - containerRect.left;
+                // Адаптивные координаты с учетом размера экрана
+                const x1 = (sideA === "right" ? rectA.left + rectA.width + offset : rectA.left - offset) - containerRect.left;
                 const y1 = rectA.top + rectA.height / 2 - containerRect.top;
-                const x2 = (sideB === "right" ? rectB.left + rectB.width + 50 : rectB.left - 50) - containerRect.left;
+                const x2 = (sideB === "right" ? rectB.left + rectB.width + offset : rectB.left - offset) - containerRect.left;
                 const y2 = rectB.top + rectB.height / 2 - containerRect.top;
+
+                // Проверяем, что линии не выходят за границы контейнера
+                const containerWidth = containerRect.width;
+                const containerHeight = containerRect.height;
+                
+                if (x1 < 0 || x1 > containerWidth || x2 < 0 || x2 > containerWidth ||
+                    y1 < 0 || y1 > containerHeight || y2 < 0 || y2 > containerHeight) {
+                    return null; // Не отображаем линию, если она выходит за границы
+                }
 
                 return { x1, y1, x2, y2 };
             });
@@ -69,26 +86,27 @@ export function Main_Block_2() {
                             width: "100%",
                             height: "100%",
                             pointerEvents: "none",
-                            overflow: "visible",
+                            overflow: "hidden", // Изменено с visible на hidden для предотвращения выхода за границы
                         }}
                     >
-                        {lines.map((line, i) => (
-                            <line
-                                key={i}
-                                x1={line.x1}
-                                y1={line.y1}
-                                x2={line.x2}
-                                y2={line.y2}
-                                stroke="#5653FF80"
-                                strokeOpacity={0.25}
-                                strokeWidth="1"
-                            // color="linear-gradient(0deg, #5653FF, #D252FF)"
-                            // style={{
-                            //     background: "linear-gradient(0deg, #5653FF, #D252FF)",
-                            //     boxShadow: "0 0 10rem 5rem #6653ff",
-                            // }}
-                            />
-                        ))}
+                        {lines.map((line, i) => {
+                            // Адаптивная толщина линии в зависимости от размера экрана
+                            const isTablet = window.innerWidth <= 1023;
+                            const strokeWidth = isTablet ? "2" : "1";
+                            
+                            return (
+                                <line
+                                    key={i}
+                                    x1={line.x1}
+                                    y1={line.y1}
+                                    x2={line.x2}
+                                    y2={line.y2}
+                                    stroke="#5653FF80"
+                                    strokeOpacity={0.25}
+                                    strokeWidth={strokeWidth}
+                                />
+                            );
+                        })}
                     </svg>
                     {/* Элементы списка */}
                     <div className='benefits-list'>
@@ -99,7 +117,8 @@ export function Main_Block_2() {
                                 <button onClick={scrollToElement}>Learn more</button>
                             </div>
                         </div>
-                        {["2", "4"].map((num, i) => (
+                        {/* Пустые элементы для десктопа - скрываем на мобильных */}
+                        {window.innerWidth > 767 && ["2", "4"].map((num, i) => (
                             <div
                                 key={i}
                                 ref={(el) => (itemsRefs.current[i] = el)}
@@ -120,7 +139,8 @@ export function Main_Block_2() {
                                 <button onClick={scrollToElement}>Learn more</button>
                             </div>
                         </div>
-                        {["6", "8"].map((num, i) => (
+                        {/* Пустые элементы для десктопа - скрываем на мобильных */}
+                        {window.innerWidth > 767 && ["6", "8"].map((num, i) => (
                             <div
                                 key={i + 2}
                                 ref={(el) => (itemsRefs.current[i + 2] = el)}

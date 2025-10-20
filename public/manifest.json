@@ -21,5 +21,21 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "shortcuts": [
+    {
+      "name": "Authentication in site",
+      "short_name": "Auth site",
+      "description": "Quick access to voice authentication",
+      "url": "/",
+      "icons": [{ "src": "favicon.ico", "sizes": "96x96" }]
+    },
+    {
+      "name": "Authentication in site",
+      "short_name": "Auth",
+      "description": "Quick access to voice authentication",
+      "url": "/",
+      "icons": [{ "src": "favicon.ico", "sizes": "96x96" }]
+    }
+  ]
 }

@@ -1,3 +1,4 @@
+/* ===== ОСНОВНЫЕ СТИЛИ ===== */
 .main-block-1 {
     display: flex;
     justify-content: space-between;
@@ -17,6 +18,9 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
 }
 
 .block-container {
@@ -27,8 +31,7 @@
 .block-text-header {
     display: grid;
     justify-items: center;
-    /* font-size: 44px; */
-    font-size: 2vw;
+    font-size: 2rem;
 }
 
 .block-text-header h2 {
@@ -46,6 +49,7 @@
     font-size: 1.1vw;
     font-style: italic;
     background: -webkit-linear-gradient(0deg, #5653FF, #D252FF);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -73,6 +77,7 @@
     font-weight: 600;
     line-height: 1;
     background: -webkit-linear-gradient(0deg, #5653FF, #D252FF);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -86,22 +91,15 @@
 .main-block-container div:nth-child(2) button {
     background-color: #5552FF;
     color: #ffffff;
-    /* width: 180px;
-    height: 50px; */
     width: 10vw;
     height: 6vh;
     border: none;
     border-radius: 40px;
-    /* font-size: 16px; */
     font-size: 0.9vw;
     cursor: pointer;
 }
 
-
-
-
-/* Block-2 */
-
+/* ===== BLOCK-2 СТИЛИ ===== */
 .layout {
     position: absolute;
     left: 150px;
@@ -115,57 +113,54 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    max-width: 100%;
     position: relative;
+    /* box-sizing: border-box; */
+    /* overflow-x: hidden; */
 }
 
 .benefits-list {
     width: 100%;
+    max-width: 100%;
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     gap: 100px 40px;
     margin-top: 40px;
-    /* z-index: 1; */
+    /* box-sizing: border-box; */
+    /* overflow-x: hidden; */
 }
 
 .benefit-item {
     display: flex;
     flex-direction: column;
-    /* width: 20em;
-    height: 20em; */
     width: 20vw;
     height: 20vw;
-    /* padding: 20px; */
     padding: 1vw;
     border-radius: 10px;
-    /* background-color: rgba(63, 63, 63, 0.2);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; */
     z-index: 1;
-
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
-    /* backdrop-filter: blur(10px); */
+    /* box-sizing: border-box;
+    max-width: 100%; */
+}
 
-    &:hover {
-        border-color: rgb(86, 83, 255);
-        box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
-    }
+.benefit-item:hover {
+    border-color: rgb(86, 83, 255);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
 }
 
 .benefit-item div {
     display: block;
     max-width: 100%;
     max-height: 100%;
-    /* line-break: auto; */
 }
 
 .benefit-item div h3 {
     width: 100%;
-    /* font-size: 36px; */
     font-size: 2vw;
-
     background: -webkit-linear-gradient(0deg, #5653FF, #D252FF);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -173,6 +168,22 @@
 .benefit-item div p {
     word-wrap: normal;
     font-size: 1.2vw;
+}
+
+.benefit-item div button {
+    background-color: #5552FF;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.benefit-item div button:hover {
+    background-color: #4a47e6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(85, 82, 255, 0.3);
 }
 
 .benefits-list .benefit-item:nth-of-type(even) {
@@ -223,30 +234,21 @@
     grid-column: 2;
 }
 
-
 .item {
     display: flex;
     justify-content: center;
     align-self: center;
     max-width: 0em;
     max-height: 0em;
-    /* border: 0 solid #ffffff; */
     border-radius: 100%;
-    /* background: -webkit-linear-gradient(0deg, #5653FF, #D252FF); */
-    /* background-color: #6653ff50; */
     box-shadow: 0 0 20em 10rem #6753ff80;
     padding: 0;
     z-index: 0;
 }
 
-
-
-
-/* Block-3 */
-
+/* ===== BLOCK-3 СТИЛИ ===== */
 .block-works {
     display: flex;
-    /* justify-content: space-between; */
     justify-content: center;
     width: 100%;
     position: relative;
@@ -258,7 +260,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 200px;
     margin-top: 40px;
-    /* z-index: 1; */
 }
 
 .works-item div {
@@ -267,17 +268,14 @@
     gap: 12px;
     padding: 1vw;
     border-radius: 10px;
-    /* background-color: rgba(63, 63, 63, 0.2);
-    backdrop-filter: blur(10px); */
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
-    /* backdrop-filter: blur(10px); */
+}
 
-    &:hover {
-        border-color: rgb(86, 83, 255);
-        box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
-    }
+.works-item div:hover {
+    border-color: rgb(86, 83, 255);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
 }
 
 .works-item div span {
@@ -287,18 +285,16 @@
     justify-content: center;
     padding: 0.3vw;
     font-size: 0.6vw;
-    /* background-color: rgba(63, 63, 63, 0.2); */
     background-color: #1E1E1E;
     border-radius: 1vw;
 }
 
 .works-item div h3 {
     width: 100%;
-    /* height: 5vh; */
-    /* font-size: 36px; */
     font-size: 1.6vw;
     margin: 0;
     background: -webkit-linear-gradient(0deg, #5653FF, #D252FF);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -310,11 +306,7 @@
     height: 14vh;
 }
 
-
-
-
-/* Block-4 */
-
+/* ===== BLOCK-4 СТИЛИ ===== */
 .cases-works {
     display: flex;
     justify-content: space-between;
@@ -323,12 +315,10 @@
 }
 
 .cases-list {
-    /* width: 100%; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 100px 40px;
     margin-top: 40px;
-    /* z-index: 1; */
 }
 
 .cases-item {
@@ -337,32 +327,23 @@
     gap: 12px;
     padding: 1vw;
     border-radius: 10px;
-    /* background-color: rgba(63, 63, 63); */
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
-    /* backdrop-filter: blur(10px); */
-
-    &:hover {
-        border-color: rgb(86, 83, 255);
-        box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
-    }
 }
 
-/* .cases-item div:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(0.3turn, #302dfc, #c429fd);
-    transition: background-image 0.3s ease;
-} */
+.cases-item:hover {
+    border-color: rgb(86, 83, 255);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+}
 
 .cases-item div h3 {
     width: 100%;
     height: 14vh;
-    /* font-size: 36px; */
     font-size: 1.6vw;
     margin: 0;
     background: -webkit-linear-gradient(0deg, #5653FF, #D252FF);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -374,11 +355,7 @@
     height: 14vh;
 }
 
-
-
-
-/* Block-5 */
-
+/* ===== BLOCK-5 СТИЛИ ===== */
 .block-cases-security {
     display: flex;
     margin-top: 40px;
@@ -398,6 +375,18 @@
     animation: float 6s ease-in-out infinite;
 }
 
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
 .features {
     flex: 1;
     display: flex;
@@ -407,7 +396,6 @@
 
 .feature-card {
     width: 30vw;
-    /* height: 14vh; */
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
@@ -438,11 +426,7 @@
     line-height: 1.5;
 }
 
-
-
-
-/* Block-6 */
-
+/* ===== BLOCK-6 СТИЛИ ===== */
 .block-cases-contact {
     display: flex;
     justify-content: center;
@@ -468,15 +452,11 @@ textarea {
     font-size: 0.8vw;
     width: 100%;
     padding: 0.75rem;
-    /* background: #1e1e1e;
-    border: 1px solid rgba(255, 255, 255, 0.08); */
     border-radius: 8px;
     color: #fff;
-
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: all 0.3s ease;
-    /* backdrop-filter: blur(10px); */
 }
 
 .form-container form input:focus,
@@ -486,52 +466,39 @@ textarea:focus {
     background: #222;
 }
 
-/* button {
-    color: white;
-    background-color: #5552FF;
-    border: none;
-    border-radius: 2vw;
-    width: 8vw;
-    font-size: 0.9vw;
-} */
+.success-msg {
+    color: #10B981;
+    font-size: 0.8vw;
+    margin-top: 10px;
+}
 
-/* button:hover {
-    background: linear-gradient(90deg, #f8e473, #d4af37);
-    transform: translateY(-2px);
-} */
+.error-msg {
+    color: #EF4444;
+    font-size: 0.8vw;
+    margin-top: 10px;
+}
 
-
-
-
-
-/* Footer */
-
+/* ===== FOOTER СТИЛИ ===== */
 .main-block-container-footer {
-    /* z-index: 1; */
-    /* width: 100vw; */
-    /* height: 30vh; */
-    background: black;
-    margin: 150px -5vw 0;
+    /* background: black; */
+    margin: 150px 0 0;
 }
 
 .block-footer {
     display: flex;
     justify-content: center;
-    /* background: #1E1E1E; */
 }
 
 .footer-items {
     font-size: 0.75vw;
     display: flex;
     justify-content: center;
-    /* grid-template-columns: repeat(3, 1fr); */
     gap: 1vw;
     padding: 2vw 0;
 }
 
 .footer-items ul {
     padding-inline-start: 0;
-    /* color: #4d4d4d; */
 }
 
 .footer-items li {
@@ -544,4 +511,779 @@ textarea:focus {
     text-decoration: none;
     font-weight: 100;
     color: white;
+}
+
+/* ===== АДАПТИВНЫЕ СТИЛИ ===== */
+
+/* Большие экраны (1920px и выше) */
+@media screen and (min-width: 1920px) {
+    .main-block-container {
+        margin-top: 200px;
+    }
+
+    .block-text-header {
+        font-size: 2.5rem;
+    }
+
+    .block-text-header p {
+        font-size: 1.2vw;
+    }
+
+    .main-block-container div:nth-child(2) button {
+        width: 12vw;
+        height: 7vh;
+        font-size: 1vw;
+    }
+
+    .benefit-item {
+        width: 22vw;
+        height: 22vw;
+    }
+
+    .benefit-item div h3 {
+        font-size: 2.2vw;
+    }
+
+    .benefit-item div p {
+        font-size: 1.3vw;
+    }
+
+    .works-list {
+        width: 55vw;
+        gap: 250px;
+    }
+
+    .works-item div h3 {
+        font-size: 1.8vw;
+    }
+
+    .works-item div p {
+        font-size: 1.1vw;
+    }
+
+    .cases-list {
+        gap: 120px 50px;
+    }
+
+    .cases-item div h3 {
+        font-size: 1.8vw;
+    }
+
+    .cases-item div p {
+        font-size: 1.1vw;
+    }
+
+    .render img {
+        width: 35vw;
+    }
+
+    .feature-card {
+        width: 35vw;
+    }
+
+    .feature-card h3 {
+        font-size: 1.2vw;
+    }
+
+    .feature-card p {
+        font-size: 1vw;
+    }
+
+    .form-container {
+        width: 40vw;
+    }
+
+    .form-container form input,
+    textarea {
+        font-size: 0.9vw;
+    }
+}
+
+/* Десктопы (1440px - 1919px) */
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+    .main-block-container {
+        margin-top: 150px;
+    }
+
+    .block-text-header {
+        font-size: 2rem;
+    }
+
+    .benefits-list {
+        gap: 80px 30px;
+    }
+
+    .benefit-item {
+        width: 24vw;
+        /* height: 18vw; */
+    }
+
+    .benefit-item div h3 {
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+    .works-list {
+        width: 50vw;
+        gap: 150px;
+    }
+
+    .cases-list {
+        gap: 80px 30px;
+    }
+
+    .render img {
+        width: 28vw;
+    }
+
+    .feature-card {
+        width: 28vw;
+    }
+}
+
+/* Планшеты в горизонтальной ориентации (1024px - 1439px) */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .main-block-container {
+        margin-top: 120px;
+    }
+
+    .block-container {
+        gap: 28px;
+    }
+
+    .block-text-header {
+        font-size: 1.8rem;
+    }
+
+    .block-text-header p {
+        font-size: 1.3vw;
+    }
+
+    .main-block-container div:nth-child(2) button {
+        width: 12vw;
+        height: 5vh;
+        font-size: 1vw;
+    }
+
+    .benefits-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px 20px;
+        margin-top: 30px;
+    }
+
+    .benefit-item {
+        width: 25vw;
+        /* height: 25vw; */
+        /* padding: 1.2vw; */
+    }
+
+    .benefit-item div h3 {
+        font-size: 2.2vw;
+    }
+
+    .benefit-item div p {
+        font-size: 1.4vw;
+    }
+
+    .works-list {
+        width: 70vw;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 100px;
+    }
+
+    .works-item div {
+        padding: 1.2vw;
+    }
+
+    .works-item div span {
+        width: 2.5vw;
+        height: 2.5vh;
+        font-size: 0.7vw;
+    }
+
+    .works-item div h3 {
+        font-size: 1.8vw;
+    }
+
+    .works-item div p {
+        font-size: 1.2vw;
+        height: 12vh;
+    }
+
+    .cases-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px 20px;
+    }
+
+    .cases-item {
+        padding: 1.2vw;
+    }
+
+    .cases-item div h3 {
+        font-size: 1.8vw;
+        height: 12vh;
+    }
+
+    .cases-item div p {
+        font-size: 1.2vw;
+        height: 12vh;
+    }
+
+    .block-cases-security {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .render img {
+        width: 40vw;
+    }
+
+    .features {
+        gap: 30px;
+    }
+
+    .feature-card {
+        width: 50vw;
+        padding: 24px 28px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.4vw;
+    }
+
+    .feature-card p {
+        font-size: 1.1vw;
+    }
+
+    .form-container {
+        width: 50vw;
+    }
+
+    .form-container form {
+        gap: 1.2vw;
+        height: 16vw;
+    }
+
+    .form-container form input,
+    textarea {
+        font-size: 1vw;
+    }
+}
+
+/* Планшеты в вертикальной ориентации (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .main-block-container {
+        margin-top: 100px;
+    }
+
+    .block-container {
+        gap: 24px;
+    }
+
+    .block-text-header {
+        font-size: 1.6rem;
+    }
+
+    .block-text-header p {
+        font-size: 1.5vw;
+    }
+
+    .main-block-container div:nth-child(2) button {
+        width: 15vw;
+        height: 5vh;
+        font-size: 1.2vw;
+    }
+
+    .benefits-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 15px;
+        margin-top: 25px;
+    }
+
+    .benefit-item {
+        width: 30vw;
+        height: 30vw;
+        /* padding: 1.5vw; */
+    }
+
+    .benefit-item div h3 {
+        font-size: 2.5vw;
+    }
+
+    .benefit-item div p {
+        font-size: 1.6vw;
+    }
+
+    .works-list {
+        width: 80vw;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+    }
+
+    .works-item div {
+        padding: 1.5vw;
+    }
+
+    .works-item div span {
+        width: 3vw;
+        height: 3vh;
+        font-size: 0.8vw;
+    }
+
+    .works-item div h3 {
+        font-size: 2vw;
+    }
+
+    .works-item div p {
+        font-size: 1.4vw;
+        height: 10vh;
+    }
+
+    .cases-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 15px;
+    }
+
+    .cases-item {
+        padding: 1.5vw;
+    }
+
+    .cases-item div h3 {
+        font-size: 2vw;
+        height: 10vh;
+    }
+
+    .cases-item div p {
+        font-size: 1.4vw;
+        height: 10vh;
+    }
+
+    .block-cases-security {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .render img {
+        width: 50vw;
+    }
+
+    .features {
+        gap: 25px;
+    }
+
+    .feature-card {
+        width: 60vw;
+        padding: 20px 24px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.6vw;
+    }
+
+    .feature-card p {
+        font-size: 1.3vw;
+    }
+
+    .form-container {
+        width: 60vw;
+    }
+
+    .form-container form {
+        gap: 1.5vw;
+        height: 18vw;
+    }
+
+    .form-container form input,
+    textarea {
+        font-size: 1.2vw;
+    }
+}
+
+/* Мобильные устройства (до 767px) */
+@media screen and (max-width: 767px) {
+    .main-block-container {
+        margin-top: 80px;
+        padding: 0 20px;
+    }
+
+    .block-container {
+        gap: 20px;
+    }
+
+    .block-text-header {
+        font-size: 1.4rem;
+    }
+
+    .block-text-header p {
+        font-size: 4vw;
+    }
+
+    .main-block-container div:nth-child(2) button {
+        width: 40vw;
+        height: 6vh;
+        font-size: 4vw;
+    }
+
+    .benefits-list {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .benefit-item {
+        width: 80vw;
+        height: auto;
+        padding: 20px;
+        min-height: 200px;
+    }
+
+    .benefit-item div h3 {
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+
+    .benefit-item div p {
+        font-size: 4vw;
+        line-height: 1.4;
+    }
+
+    .benefit-item div button {
+        width: 30vw;
+        height: 5vh;
+        font-size: 3.5vw;
+        margin-top: 15px;
+    }
+
+    .works-list {
+        width: 90vw;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .works-item div {
+        padding: 20px;
+        min-height: 180px;
+    }
+
+    .works-item div span {
+        width: 8vw;
+        height: 4vh;
+        font-size: 2.5vw;
+        margin-bottom: 10px;
+    }
+
+    .works-item div h3 {
+        font-size: 5vw;
+        margin-bottom: 10px;
+    }
+
+    .works-item div p {
+        font-size: 4vw;
+        height: auto;
+        line-height: 1.4;
+    }
+
+    .cases-list {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .cases-item {
+        padding: 20px;
+        min-height: 180px;
+    }
+
+    .cases-item div h3 {
+        font-size: 5vw;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .cases-item div p {
+        font-size: 4vw;
+        height: auto;
+        line-height: 1.4;
+    }
+
+    .block-cases-security {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .render img {
+        width: 70vw;
+    }
+
+    .features {
+        gap: 20px;
+    }
+
+    .feature-card {
+        width: 80vw;
+        padding: 20px;
+    }
+
+    .feature-card h3 {
+        font-size: 4.5vw;
+        margin-bottom: 8px;
+    }
+
+    .feature-card p {
+        font-size: 3.5vw;
+        line-height: 1.4;
+    }
+
+    .form-container {
+        width: 80vw;
+    }
+
+    .form-container form {
+        gap: 20px;
+        height: auto;
+    }
+
+    .form-container form input,
+    textarea {
+        font-size: 4vw;
+        padding: 15px;
+    }
+
+    .form-container form button {
+        width: 50vw;
+        height: 6vh;
+        font-size: 4vw;
+    }
+
+    .success-msg,
+    .error-msg {
+        font-size: 3.5vw;
+    }
+
+    .footer-items {
+        font-size: 3vw;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media screen and (max-width: 480px) {
+    .main-block-container {
+        margin-top: 60px;
+        padding: 0 10px !important;
+    }
+
+    .block-benefits {
+        padding: 0 2px;
+    }
+
+    .benefits-list {
+        padding: 0 2px;
+    }
+
+    .benefit-item {
+        width: calc(100% - 10px) !important;
+        max-width: calc(100% - 10px) !important;
+        padding: 12px;
+        min-height: 160px;
+    }
+
+    .benefit-item div button {
+        width: auto !important;
+        min-width: 100px;
+        max-width: 150px;
+        font-size: 4vw;
+        padding: 6px 12px;
+    }
+
+    .block-text-header {
+        font-size: 1.2rem;
+    }
+
+    .block-text-header p {
+        font-size: 4.5vw;
+    }
+
+    .main-block-container div:nth-child(2) button {
+        width: 50vw;
+        height: 7vh;
+        font-size: 4.5vw;
+    }
+
+    .works-item div {
+        padding: 15px;
+        min-height: 160px;
+    }
+
+    .works-item div span {
+        width: 10vw;
+        height: 5vh;
+        font-size: 3vw;
+    }
+
+    .works-item div h3 {
+        font-size: 5.5vw;
+    }
+
+    .works-item div p {
+        font-size: 4.5vw;
+    }
+
+    .cases-item {
+        padding: 15px;
+        min-height: 160px;
+    }
+
+    .cases-item div h3 {
+        font-size: 5.5vw;
+    }
+
+    .cases-item div p {
+        font-size: 4.5vw;
+    }
+
+    .render img {
+        width: 80vw;
+    }
+
+    .feature-card {
+        width: 90vw;
+        padding: 15px;
+    }
+
+    .feature-card h3 {
+        font-size: 5vw;
+    }
+
+    .feature-card p {
+        font-size: 4vw;
+    }
+
+    .form-container {
+        width: 90vw;
+    }
+
+    .form-container form input,
+    textarea {
+        font-size: 4.5vw;
+        padding: 12px;
+    }
+
+    .form-container form button {
+        width: 60vw;
+        height: 7vh;
+        font-size: 4.5vw;
+    }
+
+    .success-msg,
+    .error-msg {
+        font-size: 4vw;
+    }
+
+    .footer-items {
+        font-size: 3.5vw;
+    }
+}
+
+/* Скрытие волн на мобильных устройствах */
+@media screen and (max-width: 1023px) {
+    .container-wave {
+        display: none !important;
+    }
+}
+
+/* Дополнительные стили для Block_2 */
+@media screen and (max-width: 767px) {
+    .main-block-container {
+        padding: 0 15px !important;
+    }
+
+    .block-benefits {
+        padding: 0 5px;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .benefits-list {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        grid-template-columns: none !important;
+        grid-template-rows: none !important;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 5px;
+    }
+
+    .benefit-item {
+        width: calc(100% - 20px) !important;
+        max-width: calc(100% - 20px) !important;
+        height: auto !important;
+        min-height: 150px;
+        grid-column: unset !important;
+        grid-row: unset !important;
+        justify-self: unset !important;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .benefit-item div button {
+        /* width: auto !important; */
+        min-width: 120px;
+        /* max-width: 200px; */
+        margin-top: 10px;
+        padding: 8px 16px;
+        font-size: 3.5vw;
+        border-radius: 20px;
+    }
+
+    /* Скрываем пустые элементы на мобильных */
+    .benefit-item.item {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .block-benefits {
+        padding: 0 20px;
+    }
+
+    .benefits-list {
+        gap: 40px 20px !important;
+    }
+
+    .benefit-item {
+        /* width: 45% !important; */
+        height: auto !important;
+        /* min-height: 200px; */
+    }
+
+    .benefit-item div button {
+        width: auto !important;
+        min-width: 100px;
+        max-width: 150px;
+        margin-top: 10px;
+        padding: 6px 12px;
+        font-size: 1.2vw;
+        border-radius: 15px;
+    }
+}
+
+/* Улучшения для touch устройств */
+@media (hover: none) and (pointer: coarse) {
+
+    .benefit-item:hover,
+    .works-item div:hover,
+    .cases-item:hover,
+    .feature-card:hover {
+        transform: none;
+    }
+
+    .benefit-item:active,
+    .works-item div:active,
+    .cases-item:active,
+    .feature-card:active {
+        transform: scale(0.98);
+    }
 }

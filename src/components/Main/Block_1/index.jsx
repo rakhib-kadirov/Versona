@@ -13,13 +13,13 @@ export function Main_Block_1() {
             // 1. запускаем анимацию волн
             setRecognized(false);
             controls.start("wave");
-            
+
             // 2. через 3 секунды показываем галочку
             toCheck = setTimeout(() => {
                 setRecognized(true);
                 controls.start("check");
             }, 16000);
-            
+
             // 3. через 4 секунды начинаем заново
             toRestart = setTimeout(() => {
                 setRecognized(false);
@@ -38,7 +38,25 @@ export function Main_Block_1() {
     }, [controls]);
 
     // const bars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40];
-    const bars = Array.from({ length: 41 }, (_, i) => i);
+    let bars;
+    let widthWave, heightWave, gapWave, widthWaveGeneral, displayWave;
+    if (window.innerWidth <= 1430) {
+        bars = Array.from({ length: 16 }, (_, i) => i);
+        widthWaveGeneral = 0 + 'px'
+        widthWave = 2 + 'px'
+        heightWave = 30 + 'px'
+        gapWave = 2 + 'px'
+        // wave display none
+        displayWave = "none"
+    }
+    else {
+        bars = Array.from({ length: 41 }, (_, i) => i);
+        widthWaveGeneral = 800 + 'px'
+        widthWave = 8 + 'px'
+        gapWave = 6 + 'px'
+        heightWave = 100 + 'px'
+        displayWave = "flex"
+    }
 
     return (
         <section className='main-block-1'>
@@ -59,17 +77,17 @@ export function Main_Block_1() {
                 </div>
             </section>
             {/* <section className='main-block-column-2'> */}
-            <div style={{
+            <div className='container-wave' style={{
                 // height: "100%",
                 // background: "#f3f4f6",
-                display: "flex",
+                display: `${displayWave}`,
                 justifyContent: "center",
                 alignItems: "center",
                 width: '75%',
             }}>
                 <div
                     style={{
-                        width: "800px",
+                        width: `${widthWaveGeneral}`,
                         height: "200px",
                         display: "flex",
                         justifyContent: "center",
@@ -83,15 +101,15 @@ export function Main_Block_1() {
                             <div style={{
                                 display: "flex",
                                 alignItems: "flex-end",
-                                height: "100px",
-                                gap: "6px",
+                                height: `${heightWave}`,
+                                gap: `${gapWave}`,
                                 marginBottom: "-5px"
                             }}>
                                 {bars.map((i) => (
                                     <motion.div
                                         key={i}
                                         style={{
-                                            width: "8px",
+                                            width: `${widthWave}`,
                                             // background: "#4F46E5",
                                             background: "linear-gradient(0deg, white)",
                                             transformOrigin: "center",
@@ -125,8 +143,8 @@ export function Main_Block_1() {
                             <div style={{
                                 display: "flex",
                                 alignItems: "flex-end",
-                                height: "100px",
-                                gap: "6px",
+                                height: `${heightWave}`,
+                                gap: `${gapWave}`,
                                 transform: "rotate(180deg) scaleX(-1)",
                                 marginTop: "-5px",
                             }}>
@@ -134,7 +152,7 @@ export function Main_Block_1() {
                                     <motion.div
                                         key={i}
                                         style={{
-                                            width: "8px",
+                                            width: `${widthWave}`,
                                             // background: "#4F46E5",
                                             background: "linear-gradient(0deg, white)",
                                             transformOrigin: "center",
