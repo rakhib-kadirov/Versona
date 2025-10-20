@@ -1074,11 +1074,11 @@ textarea:focus {
     }
 
     .block-benefits {
-        padding: 0 2px;
+        /* padding: 0 2px; */
     }
 
     .benefits-list {
-        padding: 0 2px;
+        /* padding: 0 2px; */
     }
 
     .benefit-item {
@@ -1147,7 +1147,7 @@ textarea:focus {
     }
 
     .feature-card {
-        width: 90vw;
+        /* width: 90vw; */
         padding: 15px;
     }
 
@@ -1199,7 +1199,7 @@ textarea:focus {
     }
 
     .block-benefits {
-        padding: 0 5px;
+        /* padding: 0 5px; */
         width: 100%;
         max-width: 100%;
         overflow: hidden;
@@ -1225,7 +1225,7 @@ textarea:focus {
         grid-row: unset !important;
         justify-self: unset !important;
         margin: 0 auto;
-        box-sizing: border-box;
+        /* box-sizing: border-box; */
     }
 
     .benefit-item div button {
