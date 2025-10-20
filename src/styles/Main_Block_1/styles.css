@@ -395,7 +395,7 @@
 }
 
 .feature-card {
-    width: 30vw;
+    /* width: 30vw; */
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
@@ -1019,7 +1019,7 @@ textarea:focus {
     }
 
     .feature-card {
-        width: 80vw;
+        /* width: 80vw; */
         padding: 20px;
     }
 
